@@ -1,0 +1,11 @@
+[Unit]
+Description=Some Encrypted File Mounting
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStart=/opt/cypherdrive/start-encryptedfile.sh
+ExecStop=/opt/cypherdrive/stop-encryptedfile.sh
+
+[Install]
+WantedBy=multi-user.target
