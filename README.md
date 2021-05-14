@@ -3,6 +3,10 @@
 Sometimes, we need to make sure our data at rest is safe from prying eyes. This article explains how to make an encrypted loopback block device mounted by systemd.
 To execute most of these commands, you have to be root. I recommend opening a root session with "sudo su -". Having the encrypted file within a folder masked 700 and owned by root:root is the best way to go.
 
+Over time, I plan to integrate as much of that documentation into some command line python script or UI thing if that makes sense. Come back often and ask quesions in the issue tab if you need help actionning all this.
+
+I documented my reserch and process of doing an ecrypted mount point on a RHEL7 (Red Hat Enterprise Linux 7) system. I tried to make the documentation and scripts as universal as possible but distro variations may require some tweaking. I'll try it on my Debian based machine at home as soon as possible and mark any distro dependent commands in the future, if any. Have fun!
+
 ## Create and attach the loopback block device
 
 The following line will create a 10 megabytes file filled with zeros. Obviously you should create a file with a size that makes sense for your needs. Then it will attach that file as a loopback device named *loop0*.
