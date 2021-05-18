@@ -6,6 +6,12 @@ Over time, I plan to integrate as much of that documentation into some command l
 
 I documented my process of doing an ecrypted mount point on a RHEL7 (Red Hat Enterprise Linux 7) system. I tried to make the documentation and scripts as universal as possible but distro variations may require some tweaking. I'll try it on my Debian based machine at home as soon as possible and mark any distro dependent commands in the future, if any. Have fun!
 
+## Install required packages
+
+```bash
+yum install cryptsetup parted
+```
+
 ## Create and attach the loopback block device
 
 The following line will create a 10 megabytes file filled with zeros. Obviously you should create a file with a size that makes sense for your needs. Then it will attach that file as a loopback device named *loop0*.
