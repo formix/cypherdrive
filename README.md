@@ -73,7 +73,7 @@ mkfs -t ext4 /dev/mapper/encryptedfile
 For this one, I'll drop the line here without explaining it much. If you want more information on how fstab works, just check at the reference links at the end of the article. Edit `/etc/fstab` and add that line:
 
 ```bash
-/dev/mapper/encryptedfile  /home/<user>/mnt   ext4fs    defaults,noauto,umask=007,uid=<user>,gid=<user_group>      0 0
+/dev/mapper/encryptedfile  /home/<user>/mnt   ext4    defaults,noauto      0 0
 ```
 
 The file system could as well be mounted somewhere in `/var` for a more general use case. In the case I have in mind, I'm targetting a usage where a particular application for a given service has to work with that data exclusively. That is why I mount it into a private user directory.
@@ -82,7 +82,7 @@ Note that we don't want to automount that drive at boot since there is a lot of 
 
 ## Create Systemd scripts to mount the device
 
-You can dowload the scripts here. Change the values inside of it to fit your needs. You probably want to change the directory and the file name if the IMG file, the directory and key file name, loop and mapper device names, etc. Make it your own. Once ready, call the install shell script as root and it should work!
+You can dowload the scripts [here](https://github.com/formix/cypherdrive/archive/refs/tags/1.0.0.tar.gz). Change the values inside of it to fit your needs. You probably want to change the directory and the file name if the IMG file, the directory and key file name, loop and mapper device names, etc. Make it your own. Once ready, call the install shell script as root and it should work!
 
 ## References
 
